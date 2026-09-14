@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Configuración General y Reset Básico
+   ========================================================================== */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f3f8;
+    color: #1e293b;
+}
+
+/* Clearfix Tradicional para contener floats */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================================================
+   Encabezado (Header)
+   ========================================================================== */
+.header-principal {
+    background-color: #2b1055;
+    background-image: linear-gradient(135deg, #1e1b4b 0%, #3b0764 50%, #1e40af 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 3% 5%;
+    border-bottom: 4px solid #38bdf8;
+}
+
+.contenedor-header {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header-principal h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    color: #f0f9ff;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo-header {
+    font-size: 1.2em;
+    color: #38bdf8;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Navegación (Nav) con Inline-Block
+   ========================================================================== */
+.navegacion-principal {
+    background-color: #1e1b4b;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.navegacion-principal ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion-principal ul.menu li {
+    display: inline-block;
+    margin: 0;
+}
+
+.navegacion-principal ul.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.navegacion-principal ul.menu li a:hover {
+    background-color: #312e81;
+    color: #38bdf8;
+}
+
+/* ==========================================================================
+   Estructura Principal y Bloques
+   ========================================================================== */
+.contenido-principal {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.seccion-bloque {
+    background-color: #ffffff;
+    padding: 4%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-left: 6px solid #4338ca;
+}
+
+.seccion-bloque h2 {
+    color: #1e1b4b;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.seccion-bloque p {
+    font-size: 1.05em;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Multimedia Adaptable (Iframe)
+   ========================================================================== */
+.contenedor-multimedia {
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+
+.iframe-adaptable {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: #0f172a;
+    border-radius: 6px;
+}
+
+.iframe-adaptable iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: #64748b;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Artículos / Tarjetas de Contenido
+   ========================================================================== */
+.articulo-tarjeta {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.articulo-tarjeta h3 {
+    color: #3730a3;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cita-destacada {
+    background-color: #e0e7ff;
+    border-left: 4px solid #4f46e5;
+    margin: 15px 0;
+    padding: 12px 18px;
+    font-style: italic;
+    color: #1e1b4b;
+}
+
+.lista-detalles {
+    padding-left: 20px;
+    color: #334155;
+}
+
+.lista-detalles li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   Galería Flotante Adaptable (Sin Flexbox / Sin Grid / Sin Media Queries)
+   ========================================================================== */
+.contenedor-galeria {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.item-galeria {
+    float: left;
+    width: 48%; /* 2 columnas en escritorios/tabletas, se ajusta fluido */
+    margin-right: 4%;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* Truco fluido para el segundo elemento de cada fila */
+.item-galeria:nth-child(2n) {
+    margin-right: 0;
+}
+
+.item-galeria img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.item-galeria figcaption {
+    font-size: 0.85em;
+    color: #475569;
+    padding: 5px 0 0 0;
+}
+
+/* ==========================================================================
+   Sección Bibliografía
+   ========================================================================== */
+.seccion-fuentes {
+    border-left-color: #0284c7;
+}
+
+.lista-bibliografia {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.lista-bibliografia li {
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.lista-bibliografia a {
+    color: #0284c7;
+    text-decoration: underline;
+}
+
+.lista-bibliografia a:hover {
+    color: #1e1b4b;
+}
+
+/* ==========================================================================
+   Pie de Página (Footer)
+   ========================================================================== */
+.footer-principal {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px 5%;
+    font-size: 0.9em;
+    border-top: 3px solid #312e81;
+}
+
+.footer-principal p {
+    margin: 0;
+}
